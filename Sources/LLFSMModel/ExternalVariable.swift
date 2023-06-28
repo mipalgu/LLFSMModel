@@ -55,17 +55,18 @@
 // 
 
 /// An external variable definition for an LLFSM. This definition varies slightly from ``Variable`` in that
-/// an external variable is defined with a ``ExternalVariable.Mode``. The mode represents the type of
+/// an external variable is defined with a `mode`. The `mode` represents the type of
 /// operations (write-only, read-only, etc) that can be performed on the variable.
 public struct ExternalVariable: Equatable, Hashable, Codable, Sendable {
 
-    /// The mode of the external variable.
+    /// The mode of the external variable. This enum represents the possible operations supported by an
+    /// external variable.
     public enum Mode: String, Equatable, Hashable, Codable, Sendable {
 
         /// A read-only mode.
         case input
 
-        /// A mutatable mode.
+        /// A mutable mode.
         case inputOutput
 
         /// A write-only mode.

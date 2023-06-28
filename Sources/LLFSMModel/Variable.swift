@@ -54,7 +54,7 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
-/// A variable definied within a machine. This variable definition is irrespective of scope and simplfy
+/// A variable defined within a machine. This variable definition is irrespective of scope and simplfy
 /// defines the name of a resource and it's type.
 public struct Variable: Equatable, Hashable, Codable, Sendable {
 
