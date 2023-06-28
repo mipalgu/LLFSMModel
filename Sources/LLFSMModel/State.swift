@@ -68,13 +68,13 @@ public struct State: Codable, Hashable, Equatable, Sendable {
 
     public init(
         actions: [String: String],
-        externalVariable: Set<String>,
+        externalVariables: Set<String>,
         name: String,
         transitions: [Transition],
         variables: [Variable]
     ) {
         self.actions = actions
-        self.externalVariables = externalVariable
+        self.externalVariables = externalVariables
         self.name = name
         self.transitions = transitions
         self.variables = variables
