@@ -54,18 +54,37 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
+/// A state definition in a ``Machine``. Each state represents a collection of actions that are executed
+/// in a ringlet. This state also contains transitions that cause the ``Machine`` to transition to another
+/// state, and variables local to this state.
 public struct State: Codable, Hashable, Equatable, Sendable {
 
+    /// The actions within the state. Each key in the dictionary is the action name, while the value is the
+    /// code that is executed in the action.
     public let actions: [String: String]
 
+    /// The external variables this state accesses.
     public let externalVariables: Set<String>
 
+    /// The name of the state.
     public let name: String
 
+    /// The transitions from this state. These transitions use this state as the source.
     public let transitions: [Transition]
 
+    /// The variables local to this state. These variables collectively called state variables are only
+    /// accessible in this state.
     public let variables: [Variable]
 
+    /// Creates a new state from it's stored properties.
+    /// - Parameters:
+    ///   - actions: The actions within the state.
+    ///   - externalVariables: The external variables this state accesses.
+    ///   - name: The name of the state.
+    ///   - transitions: The transitions from this state.
+    ///   - variables: The variables local to this state.
+    /// - SeeAlso: ``Transition``, ``Variable``, ``ExternalVariable``.
+    @inlinable
     public init(
         actions: [String: String],
         externalVariables: Set<String>,
