@@ -54,26 +54,53 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
+/// A machine is an LLFSM definition. A basic machine contains a name, states, and variables of differing
+/// scope. An intial state is also required specifying the state the machine is in at invocation. The machine
+/// can also be *parameterized* by specifying a list of parameters and returnables. A machine may also be
+/// *suspensible* by specifying a suspended state.
+/// - SeeAlso: ``State``, ``Variable``, ``ExternalVariable``, ``Transition``.
 public struct Machine: Codable, Equatable, Hashable, Sendable {
 
+    /// The external variables accessible by this machine.
     public let externalVariables: [ExternalVariable]
 
+    /// The global variables used in this machine.
     public let globalVariables: [Variable]
 
+    /// The name of the initial state.
     public let initialState: String
 
+    /// The name of the machine.
     public let name: String
 
+    /// The parameters for this machine. This requires the machine to be *parameterised*.
     public let parameters: [Variable]
 
+    /// The variables returned by this machine. This requires the machine to be *parameterised*.
     public let returnables: [Variable]
 
+    /// All states in this machine.
     public let states: [State]
 
+    /// The name of the state assumed when the machine suspends. A value of `nil` indicates that the machine
+    /// is not *suspensible*.
     public let suspendedState: String?
 
+    /// The variables local to this machine. These variables are collectively called *machine variables*.
     public let variables: [Variable]
 
+    /// Initialise the machine from it's stored properties.
+    /// - Parameters:
+    ///   - externalVariables: The external variables accessible by this machine.
+    ///   - globalVariables: The global variables used in this machine.
+    ///   - initialState: The name of the initial state.
+    ///   - name: The name of the machine.
+    ///   - parameters: The parameters for this machine.
+    ///   - returnables: The variables returned by this machine.
+    ///   - states: The states in this machine.
+    ///   - suspendedState: The name of the state assumed when the machine suspends.
+    ///   - variables: The variables local to this machine.
+    @inlinable
     public init(
         externalVariables: [ExternalVariable],
         globalVariables: [Variable],
