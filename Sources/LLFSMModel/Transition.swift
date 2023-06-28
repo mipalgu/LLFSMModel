@@ -54,19 +54,20 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
-/// A transition definition to a `target` state when a `condition` is met.
+/// A transition definition to a `target` ``State`` when a `condition` is met.
 public struct Transition: Codable, Hashable, Equatable, Sendable {
 
-    /// The name of the target state the machine will transition to when the condition is met.
+    /// The name of the target ``State`` the ``Machine`` will transition to when the `condition` is met.
     public let target: String
 
-    /// The condition that must be met for the machine to transition.
+    /// The `condition` that must be met for the ``Machine`` to transition.
     public let condition: String
 
-    /// Creates a new transition definition from the target state and condition.
+    /// Creates a new transition definition from the `target` ``State`` and `condition`.
     /// - Parameters:
-    ///   - target: The name of the target state the machine will transition to when the condition is met.
-    ///   - condition: The condition that must be met for the machine to transition.
+    ///   - target: The name of the `target` ``State`` the ``Machine`` will transition to when the `condition`
+    ///             is met.
+    ///   - condition: The `condition` that must be met for the ``Machine`` to transition.
     @inlinable
     public init(target: String, condition: String) {
         self.target = target
