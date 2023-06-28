@@ -54,25 +54,43 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
+/// An external variable definition for an LLFSM. This definition varies slightly from ``Variable`` in that
+/// an external variable is defined with a ``ExternalVariable.Mode``. The mode represents the type of
+/// operations (write-only, read-only, etc) that can be performed on the variable.
 public struct ExternalVariable: Equatable, Hashable, Codable, Sendable {
 
+    /// The mode of the external variable.
     public enum Mode: String, Equatable, Hashable, Codable, Sendable {
 
+        /// A read-only mode.
         case input
 
+        /// A mutatable mode.
         case inputOutput
 
+        /// A write-only mode.
         case output
     }
 
+    /// The default value of the external variable.
     public let defaultValue: String?
 
+    /// The mode of the external variable.
     public let mode: Mode
 
+    /// The name of the external variable.
     public let name: String
 
+    /// The type of the external variable.
     public let type: String
 
+    /// Creates an external variable definition with the specified parameters.
+    /// - Parameters:
+    ///   - defaultValue: The default value of the external variable.
+    ///   - mode: The mode of the external variable.
+    ///   - name: The name of the external variable.
+    ///   - type: The type of the external variable.
+    @inlinable
     public init(defaultValue: String? = nil, mode: Mode, name: String, type: String) {
         self.defaultValue = defaultValue
         self.mode = mode
