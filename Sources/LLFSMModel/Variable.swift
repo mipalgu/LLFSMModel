@@ -54,14 +54,25 @@
 // Fifth Floor, Boston, MA  02110-1301, USA.
 // 
 
+/// A variable definied within a machine. This variable definition is irrespective of scope and simplfy
+/// defines the name of a resource and it's type.
 public struct Variable: Equatable, Hashable, Codable, Sendable {
 
+    /// The default value of the variable.
     public let defaultValue: String?
 
+    /// The name of the variable.
     public let name: String
 
+    /// The type of the variable.
     public let type: String
 
+    /// Initialse the variable with it's properties.
+    /// - Parameters:
+    ///   - defaultValue: The default value of the variable.
+    ///   - name: The name of the variable.
+    ///   - type: The type of the variable.
+    @inlinable
     public init(defaultValue: String? = nil, name: String, type: String) {
         self.defaultValue = defaultValue
         self.name = name
