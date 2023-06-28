@@ -13,7 +13,7 @@ convey the basic structure within a machine without type-information or programm
 of these models are `Codable` and can be integrated into other languages through external data formats such
 as `JSON`.
 
-Please visit our [documentation website](https://mipalgu.github.io/VHDLParsing/) for the latest changes in
+Please visit our [documentation website](https://mipalgu.github.io/LLFSMModel/) for the latest changes in
 this repository.
 
 ## Requirements
