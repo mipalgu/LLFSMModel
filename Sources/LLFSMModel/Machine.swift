@@ -100,6 +100,7 @@ public struct Machine: Codable, Equatable, Hashable, Sendable {
     ///   - states: The states in this machine.
     ///   - suspendedState: The name of the state assumed when the machine suspends.
     ///   - variables: The variables local to this machine.
+    /// - SeeAlso: ``State``, ``Variable``, ``ExternalVariable``, ``Transition``.
     @inlinable
     public init(
         externalVariables: [ExternalVariable],
