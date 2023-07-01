@@ -43,7 +43,7 @@ let package = Package(
             targets: ["MyPackage"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/mipalgu/LLFSMModel", from: "0.1.0")
+        .package(url: "https://github.com/mipalgu/LLFSMModel", from: "1.0.0")
     ],
     targets: [
         .target(
